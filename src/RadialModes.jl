@@ -6,7 +6,7 @@ struct RadialMode <: CallableAtom
 end
 
 function (ψ::RadialMode)(r)
-    asymptoticpart = ((r-1)^ψ.α)*(r^(ψ.β))*(exp(-ψ.γ*(r-1)))
+    asymptoticpart = ((im*(r-1))^ψ.α)*((im*r)^(ψ.β))*(exp(-ψ.γ*(r-1)))
     z = (r-1)/r
     s=Complex(0.0)
     #sum(ψ.aₙ[n]*z^(n-1) for n ∈ 1:length(ψ.aₙ))
