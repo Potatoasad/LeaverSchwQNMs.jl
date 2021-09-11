@@ -80,7 +80,12 @@ end
 function (ψ::RadialMode)(r)
     asymptoticpart = ((r-1)^ψ.α)*(r^(ψ.β))*(exp(-ψ.γ*(r-1)))
     z = (r-1)/r
-    asymptoticpart*sum(ψ.aₙ[n]*z^(n-1) for n ∈ 1:length(ψ.aₙ))
+    s=Complex(0.0)
+    #sum(ψ.aₙ[n]*z^(n-1) for n ∈ 1:length(ψ.aₙ))
+    for n ∈ 1:length(ψ.aₙ)
+        s += ψ.aₙ[n]*z^(n-1)
+    end
+    asymptoticpart*s
 end
 
 function RadialMode(s,l,n)
