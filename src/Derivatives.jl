@@ -1,4 +1,4 @@
-function ∂r(ψᵣ::RadialMode)
+function ∂r(ψ::RadialMode)
     α = ψ.α; β = ψ.β; γ = ψ.γ;
     ρ = ψ.ρ; aₙ = ψ.aₙ;
     s = ψ.s; l = ψ.l; n = ψ.n;
