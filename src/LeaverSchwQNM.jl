@@ -100,7 +100,7 @@ function RadialMode(s,l,n)
     RadialMode(s,l,n,α,β,γ,ρ,aₙ)
 end
 
-## Define the derivative of the function 
+## Define the derivative of the function
 function ∂r(ψᵣ::RadialMode)
     α = ψ.α; β = ψ.β; γ = ψ.γ;
     ρ = ψ.ρ; aₙ = ψ.aₙ;
@@ -117,6 +117,6 @@ function ∂r(ψᵣ::RadialMode)
     α*ψα + β*ψβ - γ*ψ + ψaₙ
 end
 
-
+export ∂r, RadialMode, GetFreq
 
 end # module
