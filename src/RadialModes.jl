@@ -45,7 +45,7 @@ function Int2Sub(num,converter)
     end
 end
 
-function Base.show(io::IO, ψ::QuasinormalModeFunction)
+function Base.show(io::IO, ψ::RadialMode)
     BigDigits = "+-0123456789"
     SmallDigits = "₊₋₀₁₂₃₄₅₆₇₈₉"
     Subdict = Dict(zip(BigDigits,SmallDigits))
