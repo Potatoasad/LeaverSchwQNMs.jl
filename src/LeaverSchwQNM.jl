@@ -16,7 +16,7 @@ __init__()
 function GetFreq(s,l,n; qnm=qnm)
     grav_freq = qnm.modes_cache(s=s,l=l,m=0,n=n)
     ω, Alm, Cllʼ = grav_freq(a=0.0)
-    ω
+    ω/2
 end
 
 ## Series Calculation
