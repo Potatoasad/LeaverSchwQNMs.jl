@@ -32,3 +32,25 @@ function RadialMode(s,l,n)
 
     RadialMode(s,l,n,α,β,γ,ρ,aₙ)
 end
+
+import Base.show
+
+function Int2Sub(num,converter)
+    if num < 0
+       strnum = string(num)[2]
+       return "₋"*converter[strnum]
+    else
+       strnum = string(num)[1]
+       return converter[strnum]
+    end
+end
+
+function Base.show(io::IO, ψ::QuasinormalModeFunction)
+    BigDigits = "+-0123456789"
+    SmallDigits = "₊₋₀₁₂₃₄₅₆₇₈₉"
+    Subdict = Dict(zip(BigDigits,SmallDigits))
+    s = Int2Sub(ψ.s,Subdict)
+    l = Int2Sub(ψ.l,Subdict)
+    n = Int2Sub(ψ.n,Subdict)
+    print(io,s*"Ψ"*l*n)
+end
