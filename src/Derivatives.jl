@@ -11,7 +11,7 @@ function ∂r(ψ::RadialMode)
     nn = 1:length(aₙshift)
     aₙshift = aₙshift .*nn
     ψaₙ = RadialMode(s,l,n,α,β-2,γ,ρ,aₙshift)
-    α*ψα + β*ψβ - γ*ψ + ψaₙ
+    (im*α)*ψα + (im*β)*ψβ - γ*ψ - ψaₙ
 end
 
 function ∂r(Ψ::LinearCombinationOf{T}) where T
