@@ -13,3 +13,7 @@ function ∂r(ψᵣ::RadialMode)
     ψaₙ = RadialMode(s,l,n,α,β-2,γ,ρ,aₙshift)
     α*ψα + β*ψβ - γ*ψ + ψaₙ
 end
+
+function ∂r(Ψ::LinearCombinationOf{T}) where T
+    sum(v*∂r(k) for (k,v) in Ψ.dict)
+end
